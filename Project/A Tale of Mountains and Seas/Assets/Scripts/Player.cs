@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,8 +10,18 @@ public class Player : MonoBehaviour
     public bool isMovingToNpc = false; //是否正向Npc移动
     public GameObject NpcMovingTo;
     public bool isMovingToPortal = false; //是否正向传送门移动
+    public GameObject PortalMovingTo;
     private float speed = 5f;
 
+    private void Awake()
+    {
+        //同一场景的同一物体删了
+        GameObject sameGo = GameObject.Find(this.gameObject.name);
+        if (sameGo.gameObject != this.gameObject && sameGo.scene == this.gameObject.scene)
+        {   
+            Destroy(this.gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +76,7 @@ public class Player : MonoBehaviour
                     isMoving = true;
                     isMovingToNpc = false;
                     isMovingToPortal = true;
+                    PortalMovingTo = hit.collider.gameObject;
                     //targetPosition = hit.point;
                     targetPosition = hit.collider.bounds.ClosestPoint(transform.position);
                 }
@@ -95,7 +107,8 @@ public class Player : MonoBehaviour
                 if (isMovingToPortal)
                 {
                     isMovingToPortal = false;
-
+                    //SceneManager.LoadScene("MainMap");
+                    PortalMovingTo.SendMessage("PassPortal");
                 }
             }
         }

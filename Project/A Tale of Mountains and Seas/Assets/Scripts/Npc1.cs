@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Npc1 : MonoBehaviour
 {
+    static public Npc1 Instance; 
+
     public GameObject msgbox;
 
     string[] contents;
@@ -12,6 +14,13 @@ public class Npc1 : MonoBehaviour
     public int index;
 
     public Text content;
+
+    public bool meet = false;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +56,7 @@ public class Npc1 : MonoBehaviour
 
     public void MeetNpc()
     {
+        meet = true;
         msgbox.SetActive(true);
     }
 

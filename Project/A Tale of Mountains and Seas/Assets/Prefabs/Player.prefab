@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1490840773}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   isMovingToNpc: 0
   NpcMovingTo: {fileID: 0}
   isMovingToPortal: 0
+  PortalMovingTo: {fileID: 0}
 --- !u!70 &1490840773
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
