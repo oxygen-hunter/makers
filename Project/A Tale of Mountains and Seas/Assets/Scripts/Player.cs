@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    static public Player Instance;
     public Vector2 targetPosition = Vector2.zero;//用来保存目标位置
     public bool isMoving = false;//用来判断是否鼠标移动
     public bool isMovingToNpc = false; //是否正向Npc移动
@@ -17,9 +18,13 @@ public class Player : MonoBehaviour
     {
         //同一场景的同一物体删了
         GameObject sameGo = GameObject.Find(this.gameObject.name);
-        if (sameGo.gameObject != this.gameObject && sameGo.scene == this.gameObject.scene)
-        {   
+        if (sameGo.gameObject != this.gameObject)
+        {
             Destroy(this.gameObject);
+        }
+        else
+        {   //否则指定单例
+            Instance = this;
         }
     }
 

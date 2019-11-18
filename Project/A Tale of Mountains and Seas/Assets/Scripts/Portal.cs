@@ -7,6 +7,8 @@ public class Portal : MonoBehaviour
 {
     public int id;
 
+    public int timeUse;
+
     public static string[] SceneName = 
     {
         "MainMap",
@@ -18,7 +20,7 @@ public class Portal : MonoBehaviour
         "SubMap4",
         "SubMap5",
         "SubMap6",
-        "SubMap2",
+        "SubMap7",
         "SubMap8"
     };
 
@@ -39,8 +41,11 @@ public class Portal : MonoBehaviour
     public void PassPortal()
     {
         DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Player"));
+        DontDestroyOnLoad(GameObject.Find("MainUI"));
         //DontDestroyOnLoad(GameObject.FindGameObjectWithTag("Npc"));
+        Player.Instance.gameObject.transform.position = new Vector3(0, 0, -1); //重置主角位置
 
+        Clock.Instance.ShortenTime(timeUse); //消耗时间
         SceneManager.LoadSceneAsync(SceneName[id]);
     }
 }
