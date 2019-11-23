@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/OuterGame/MainMap.unity
+- path: Assets/Scenes/OuterGame/Welcome.unity
   isLoaded: 1
   isActive: 1

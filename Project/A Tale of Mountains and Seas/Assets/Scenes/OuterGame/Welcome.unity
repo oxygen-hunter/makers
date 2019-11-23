@@ -1084,7 +1084,7 @@ MonoBehaviour:
   btnStart: {fileID: 332830515}
   btnSetting: {fileID: 194512309}
   btnAbout: {fileID: 630960992}
-  btnExit: {fileID: 194512309}
+  btnExit: {fileID: 642695273}
 --- !u!1 &1801809453
 GameObject:
   m_ObjectHideFlags: 0
