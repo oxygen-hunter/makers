@@ -71,11 +71,13 @@
     <Compile Include="Assets\Scripts\OuterGame\Backpack.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Clock.cs" />
     <Compile Include="Assets\Scripts\OuterGame\FollowTarget.cs" />
+    <Compile Include="Assets\Scripts\OuterGame\Help.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Introduction.cs" />
     <Compile Include="Assets\Scripts\OuterGame\MainUI.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Monster.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Npc.cs" />
     <Compile Include="Assets\Scripts\OuterGame\NpcBiFang.cs" />
+    <Compile Include="Assets\Scripts\OuterGame\NpcIllustration.cs" />
     <Compile Include="Assets\Scripts\OuterGame\NpcJingWei.cs" />
     <Compile Include="Assets\Scripts\OuterGame\NpcJiuWeiHu.cs" />
     <Compile Include="Assets\Scripts\OuterGame\NpcLiLi.cs" />
@@ -83,6 +85,7 @@
     <Compile Include="Assets\Scripts\OuterGame\NpcZheng.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Player.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Portal.cs" />
+    <Compile Include="Assets\Scripts\OuterGame\ThingIllustration.cs" />
     <Compile Include="Assets\Scripts\OuterGame\Welcome.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/UnityRepos/makers/Project/A Tale of Mountains and Seas/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

@@ -8,7 +8,7 @@ public class Clock : MonoBehaviour
 {
     public static Clock Instance;
 
-    private int timeLeft;
+    public int timeLeft;
 
     public Text timeText;
 

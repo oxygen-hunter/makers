@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
 
-public enum Turn { Npc, Player, GameStart, GameWin, GameLose, End, GiveYou, Choose };
+public enum Turn { Npc, Player, GameStart, GameWin, GameLose, End, GiveYou, Choose, ReGame, ReMeet };
 
 public class Npc : MonoBehaviour
 {
@@ -18,7 +18,7 @@ public class Npc : MonoBehaviour
     protected string[] ItemGiveName;
 
     //对话框系统
-    public GameObject dialog; //拖动赋值
+    public GameObject Dialog; //拖动赋值
     public Image HeadImage; //拖动赋值
     public Text content; //拖动赋值
     public Button ConfirmBtn; //拖动赋值
@@ -29,6 +29,7 @@ public class Npc : MonoBehaviour
     public Sprite PlayerHead; //load进来
     public Tuple<Turn, string, string, string>[] talkContent;
     public int contentIndex; //讲话下标
+    public Text SpeakerName; //拖动赋值
     
     protected virtual void Awake()
     {
@@ -42,7 +43,7 @@ public class Npc : MonoBehaviour
         CancelBtn.onClick.AddListener(ClickCancelBtn);
 
         //隐藏对话框，预加载对话内容，重置对话下标
-        dialog.SetActive(false);
+        Dialog.SetActive(false);
         contentIndex = 0;
     }
     
@@ -58,15 +59,28 @@ public class Npc : MonoBehaviour
         //禁止主角移动
         Player.Instance.allowAction = false;
         meet = true;
-        dialog.SetActive(true);
-        //预加载第0条对话
-        contentIndex = 0;
-        UpdateDialog();
+        Dialog.SetActive(true);
+        if (!GetWin())
+        {   //没赢过
+            //预加载第0条对话
+            contentIndex = 0;
+            UpdateDialog();
+        }
+        else
+        {   //赢过，直接加载赢过的语句
+            contentIndex = JumpToContent(Turn.ReMeet);
+            UpdateDialog();
+        }
     }
 
-    protected virtual bool HaveWin()
+    protected virtual bool GetWin()
     {
         return true;
+    }
+
+    protected virtual void SetWin(bool b)
+    {
+
     }
 
     protected virtual int NpcGame()
@@ -94,36 +108,44 @@ public class Npc : MonoBehaviour
             //第一次到这启动游戏，第二次到这？？
             int result = NpcGame();
             Debug.Log("npc game end");
-
-            if (result == 1)
-            {   //获胜
+            if (result == 0)
+            {   //跳转到了真实游戏
+                return;
+            }
+            else if (result == 1)
+            {   //未做的游戏，获胜
                 Debug.Log("npc game win");
                 //不可重复获得道具
-                if (!HaveWin())
+                if (!GetWin())
                 {
+                    SetWin(true);
                     foreach (var it in ItemName)
                     {
                         Backpack.Instance.AddItem(it);
                     }
                 }
                 contentIndex = JumpToContent(Turn.GameWin);
-
-                //消耗时间计时
                 Clock.Instance.ShortenTime(timeUse);
             }
-            else if (result == 2)
-            {   //失败
+            else
+            {   //未做的游戏，失败
                 Debug.Log("npc game lose");
                 contentIndex = JumpToContent(Turn.GameLose);
-
-                //消耗时间计时
                 Clock.Instance.ShortenTime(timeUse);
             }
+            //return;
+        }
+        else if (talkContent[contentIndex].Item1 == Turn.ReGame)
+        {
+            Debug.Log("Regame");
+            NpcGame();
+
         }
         else if (talkContent[contentIndex].Item1 == Turn.GiveYou)
         {   //神农赠礼，不花时间
-            if (!HaveWin())
+            if (!GetWin())
             {
+                SetWin(true);
                 foreach (var it in ItemGiveName)
                 {
                     Backpack.Instance.AddItem(it);
@@ -132,8 +154,9 @@ public class Npc : MonoBehaviour
         }
         else if (talkContent[contentIndex].Item1 == Turn.Choose)
         {   //接受九尾赠礼，花时间
-            if (!HaveWin())
+            if (!GetWin())
             {
+                SetWin(true);
                 foreach (var it in ItemGiveName)
                 {
                     Backpack.Instance.AddItem(it);
@@ -152,8 +175,9 @@ public class Npc : MonoBehaviour
     {
         if (contentIndex + 1 < talkContent.Length && talkContent[contentIndex+1].Item1 == Turn.Choose)
         {   //拒绝九尾赠礼，获得辟邪丹
-            if (!HaveWin())
+            if (!GetWin())
             {
+                SetWin(true);
                 foreach (var it in ItemName)
                 {
                     Backpack.Instance.AddItem(it);
@@ -168,7 +192,7 @@ public class Npc : MonoBehaviour
 
         //index清零，隐藏对话框
         contentIndex = 0;
-        dialog.SetActive(false);
+        Dialog.SetActive(false);
         //允许移动
         Player.Instance.allowAction = true;
     }
@@ -176,7 +200,7 @@ public class Npc : MonoBehaviour
     protected int JumpToContent(Turn t)
     {
         //跳转到胜利/失败/结束的语句
-        for (int i = contentIndex; i < talkContent.Length; i++)
+        for (int i = 0; i < talkContent.Length; i++)
         {
             if (talkContent[i].Item1 == t)
             {
@@ -191,14 +215,17 @@ public class Npc : MonoBehaviour
         //显示对话框
         switch (talkContent[contentIndex].Item1)
         {
-            case (int)(Turn.Npc):
+            case Turn.Npc:
                 HeadImage.sprite = NpcHead;
+                SpeakerName.text = NpcName;
                 break;
             case Turn.Player:
                 HeadImage.sprite = PlayerHead;
+                SpeakerName.text = "你";
                 break;
             default:
                 HeadImage.sprite = NpcHead;
+                SpeakerName.text = NpcName;
                 break;
         }
         //HeadImage.sprite = talkContent[contentIndex].Item1 == Turn.Npc ? NpcHead : PlayerHead;
@@ -209,14 +236,17 @@ public class Npc : MonoBehaviour
 
     public void JudgeBattleResult()
     {
-        dialog.SetActive(true);
+        Player.Instance.allowAction = false;
+
+        Dialog.SetActive(true);
         int result = Player.Instance.battleResult;
         if (result == 1)
         {   //获胜
             Debug.Log("npc game win");
             //不可重复获得道具
-            if (!HaveWin())
+            if (!GetWin())
             {
+                SetWin(true);
                 foreach (var it in ItemName)
                 {
                     Backpack.Instance.AddItem(it);

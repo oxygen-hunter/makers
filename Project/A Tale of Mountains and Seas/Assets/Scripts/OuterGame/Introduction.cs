@@ -33,7 +33,7 @@ public class Introduction : MonoBehaviour
             id++;
             if (id >= Pages.Length)
             {
-                SceneManager.LoadScene("MainMap");
+                SceneManager.LoadScene("Home");
             }
             else
             {
@@ -42,7 +42,7 @@ public class Introduction : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MainMap");
+            SceneManager.LoadScene("Home");
         }
     }
 }

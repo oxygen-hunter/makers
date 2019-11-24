@@ -6,14 +6,14 @@ using System;
 
 public class NpcJingWei : Npc
 {
-    static bool isWin = false;
+    static public bool isWin = false;
 
     protected override void Start()
     {
         base.Start();
 
         NpcName = "精卫";
-        timeUse = 3;
+        timeUse = 1;
         ItemName = new string[]{ "西山之木", "精卫之羽" };
 
         NpcHead = Resources.Load<Sprite>("Npc/" + NpcName + "头像");
@@ -27,16 +27,18 @@ public class NpcJingWei : Npc
             new Tuple<Turn, string, string, string>(Turn.Player, "我错了错了，再也不敢了，仙女姐姐快放我下来！","继续", "取消"),
             new Tuple<Turn, string, string, string>(Turn.Npc, "说吧，你为什么要砍树？","继续", "取消"),
             new Tuple<Turn, string, string, string>(Turn.Player, "这些年来，天灾不断，水浪滔天，凶兽作乱，无数生灵惨遭其害，我要这灵木去救人。（转瞬间你又落在了平地。）","继续", "取消"),
-            new Tuple<Turn, string, string, string>(Turn.Npc, "原来如此，水浪之灾，东海何时才能堙为平地，不再为祸……（少女似乎陷入了痛苦的回忆中）如若是为了救人，你可以带走柘木枝，但我需要考验你是否是心诚之人。","进入考验", "取消"),
+            new Tuple<Turn, string, string, string>(Turn.Player, "原来如此，水浪之灾，东海何时才能堙为平地，不再为祸……（少女似乎陷入了痛苦的回忆中）","继续", "取消"),
+            new Tuple<Turn, string, string, string>(Turn.Npc, "如若是为了救人，你可以带走柘木枝，但我需要考验你是否是心诚之人。\n\n（考验会花费 " + timeUse + " 个时辰）","进入考验", "下次再来"),
 
             new Tuple<Turn, string, string, string>(Turn.GameStart, "", "", ""),
 
-            new Tuple<Turn, string, string, string>(Turn.GameWin,"你果然是心诚之人，这段柘木枝你拿去。我身上的这片羽毛也给你，希望它能保佑你，也愿人间不再有海水之灾。\n\n获取道具：西山之木×1 精卫之羽×1","继续","取消"),
+            new Tuple<Turn, string, string, string>(Turn.GameWin,"你果然是心诚之人，这段柘木枝你拿去。我身上的这片羽毛也给你，希望它能保佑你，也愿人间不再有海水之灾。\n\n获取道具：西山之木×1 精卫之羽×1","收入囊中","谢谢姐姐"),
             new Tuple<Turn, string, string, string>(Turn.End, "", "", ""),
 
-            new Tuple<Turn, string, string, string>(Turn.GameLose, "你杂念太多，浮躁之气傍身，还是改日再来吧。", "继续", "取消"),
+            new Tuple<Turn, string, string, string>(Turn.GameLose, "你杂念太多，浮躁之气傍身，还是改日再来吧。", "好吧", "黯然离去"),
             new Tuple<Turn, string, string, string>(Turn.End, "", "", ""),
 
+            new Tuple<Turn, string, string, string>(Turn.ReMeet, "（北方发鸠山，柘木葱茏，参天的古木上有鸟族少女驻足，远眺东方，其唇如玉，其足为赤，常发“精卫”之声，似乎在呼喊着什么。）", "打扰了", "再见"),
             new Tuple<Turn, string, string, string>(Turn.End, "", "", ""),
         };
     }
@@ -47,17 +49,14 @@ public class NpcJingWei : Npc
         return 1;
     }
 
-    protected override bool HaveWin()
+    protected override bool GetWin()
     {
-        if (isWin == false)
-        {
-            isWin = true;
-            return false;
-        }
-        else
-        {
-            return isWin;
-        }
+        return isWin;
+    }
+
+    protected override void SetWin(bool b)
+    {
+        isWin = b;
     }
 }
 

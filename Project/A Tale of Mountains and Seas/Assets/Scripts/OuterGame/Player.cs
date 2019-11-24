@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject NpcMovingTo;
     public bool isMovingToPortal = false; //是否正向传送门移动
     public GameObject PortalMovingTo;
-    private float speed = 2f;
+    public float speed;
     public bool allowAction = true;
 
     private SpriteRenderer sr;
@@ -64,7 +64,6 @@ public class Player : MonoBehaviour
             var lastBoss = GameObject.Find(Player.Instance.lastBossName);
             if (lastBoss)
             {
-                Debug.Log("7777");
                 lastBoss.SendMessage("JudgeBattleResult");
                 battleResult = 0;
             }
@@ -176,7 +175,7 @@ public class Player : MonoBehaviour
                 if (isMovingToPortal)
                 {   //到了传送门门口
                     isMovingToPortal = false;
-                    PortalMovingTo.SendMessage("PassPortal");
+                    PortalMovingTo.SendMessage("MeetPortal");
                 }
             }
         }
