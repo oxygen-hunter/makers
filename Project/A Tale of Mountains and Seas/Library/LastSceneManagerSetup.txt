@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/OuterGame/Home.unity
+- path: Assets/Scenes/InnerGame/BossBiFang.unity
   isLoaded: 1
   isActive: 1

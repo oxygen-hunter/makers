@@ -6,12 +6,12 @@ public class Zheng : Boss
     protected override void Start()
     {
         // 狰非常凶残，攻击间隔缩短
-        sr = GetComponent<SpriteRenderer>();
         HP = 6;
         moveSpeed = 4;
         moveTimeMax = 1.6f;
         attackTimeMax = 0.8f;
         skillCD = 128;
+        HPStrip.value = HPStrip.maxValue = HP;
     }
 
     protected override void Skill()

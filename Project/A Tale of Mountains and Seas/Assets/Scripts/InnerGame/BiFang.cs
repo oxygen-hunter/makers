@@ -11,6 +11,7 @@ public class BiFang : Boss
         moveTimeMax = 0.8f;
         attackTimeMax = 1.2f;
         skillCD = 80;
+        HPStrip.value = HPStrip.maxValue = HP;
     }
 
     protected override void Skill()
