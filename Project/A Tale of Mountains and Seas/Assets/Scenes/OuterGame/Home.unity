@@ -1927,8 +1927,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -159, y: 19}
-  m_SizeDelta: {x: 244.7, y: 300}
+  m_AnchoredPosition: {x: -137.44, y: 7.46}
+  m_SizeDelta: {x: 289.49, y: 323.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &215833267
 CanvasGroup:
@@ -4770,7 +4770,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 165}
+  m_AnchoredPosition: {x: 15.2, y: 172.6}
   m_SizeDelta: {x: 997.2, y: 368.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581044441
@@ -5807,8 +5807,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -140, y: 120}
-  m_SizeDelta: {x: 301.55762, y: 255.03635}
+  m_AnchoredPosition: {x: -171.7, y: 143.2}
+  m_SizeDelta: {x: 352.54, y: 324.81827}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &670025851
 MonoBehaviour:
@@ -5857,11 +5857,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u64CD\u4F5C\u8BF4\u660E\n1. \u9F20\u6807\u5DE6\u952E\u70B9\u51FB\u5730\u677F\u79FB\u52A8\n2.
-    \u70B9\u51FB\u4F20\u9001\u95E8\u53EF\u4F20\u9001\u5230\u4E0B\u4E00\u4E2A\u5730\u70B9\n3.
-    \u70B9\u51FBNPC\u53EF\u5F15\u53D1NPC\u4E8B\u4EF6\n4. \u6218\u6597\u4E2DWASD/\u65B9\u5411\u952E\u79FB\u52A8\n
-    \   \u7A7A\u683C\u5C04\u51FB\n\nTips\n1. NPC\u4E4B\u95F4\u6709\u4E00\u4E9B\u5173\u7CFB\n2.
-    \u641C\u96C6\u4E0D\u540C\u7684\u7269\u54C1\u4F1A\u5F71\u54CD\u7ED3\u5C40\n    \u548C\u8BC4\u5206"
+  m_Text: "\u64CD\u4F5C\u8BF4\u660E\n1. \u9F20\u6807\u5DE6\u952E\u70B9\u51FB\u5730\u677F\u79FB\u52A8\u3002\n2.
+    \u70B9\u51FB\u4F20\u9001\u95E8\u53EF\u4F20\u9001\u5230\u4E0B\u4E00\u4E2A\u5730\u70B9\u3002\n3.
+    \u70B9\u51FBNPC\u53EF\u5F15\u53D1NPC\u4E8B\u4EF6\u3002\n4. \u6218\u6597\u4E2DWASD/\u65B9\u5411\u952E\u79FB\u52A8\uFF0C\n
+    \   \u6309\u7A7A\u683C\u5C04\u51FB\u3002\n\nTips\n1. NPC\u4E4B\u95F4\u6709\u4E00\u4E9B\u5173\u7CFB\u3002\n2.
+    \u641C\u96C6\u4E0D\u540C\u7684\u7269\u54C1\u4F1A\u5F71\u54CD\u7ED3\u5C40\n    \u548C\u8BC4\u5206\u3002\n3.
+    \u4F20\u9001\u548C\u6311\u6218NPC\u90FD\u4F1A\u6D88\u8017\u65F6\u8FB0\uFF0C\n
+    \   \u8D85\u65F6\u4F1A\u88AB\u5F3A\u5236\u4F20\u56DE\u796D\u575B\u3002\n4. \u8BF7\u5408\u7406\u5206\u914D\u65F6\u95F4\uFF0C\u4F53\u9A8C\u591A\u5468\u76EE\u6E38\u620F\u3002"
 --- !u!222 &670025853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10445,6 +10447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5603e90f3534124faa0a34a2858cab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLeft: 0
   timeText: {fileID: 1941266342}
 --- !u!1001 &1045550610
 PrefabInstance:
@@ -18113,7 +18116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136, y: 165}
+  m_AnchoredPosition: {x: 158.7, y: 177.3}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020738846

@@ -22,8 +22,9 @@ public class Help : MonoBehaviour
             //打开按钮监听事件
             OpenBtn.onClick.AddListener(ShowHelp);
             CloseBtn.onClick.AddListener(HideHelp);
-            //隐藏图鉴
-            HideHelp();
+            //一开始不隐藏帮助
+            ShowHelp();
+            //HideHelp();
         }
     }
 

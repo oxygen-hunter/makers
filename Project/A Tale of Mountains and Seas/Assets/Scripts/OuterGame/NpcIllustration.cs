@@ -22,12 +22,12 @@ public class NpcIllustration : MonoBehaviour
 
     Tuple<int, int, string, string, string, string>[] AllItem = 
     {
-        new Tuple<int, int, string, string, string, string>(0, 20, "精卫", "精卫的描述", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(0, 20, "毕方", "毕方的描述", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(0, 20, "狰", "狰的描述", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(0, 20, "狸力", "狸力的描述", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(0, 20, "神农", "神农的描述", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(0, 20, "九尾狐", "九尾狐的描述", "精卫", "发鸠山"),
+        new Tuple<int, int, string, string, string, string>(100, 20, "精卫", "炎帝最小的女儿，溺水而亡，化作精卫鸟。拜访精卫后再找找她的父亲，也许有意想不到的惊喜。", "精卫", "发鸠山"),
+        new Tuple<int, int, string, string, string, string>(101, 20, "毕方", "有鸟焉，其状如鹤，一足，赤文青质而白喙，名曰毕方。", "毕方", "章莪山"),
+        new Tuple<int, int, string, string, string, string>(102, 20, "狰", "有兽焉，其状如赤豹，五尾一角，其音如击石，其名曰狰。", "狰", "章莪山"),
+        new Tuple<int, int, string, string, string, string>(103, 20, "狸力", "有兽焉，其状如豚，有距，其音如狗吠，其名曰狸力；见则其县多土功。", "狸力", "柜山"),
+        new Tuple<int, int, string, string, string, string>(104, 20, "神农", "姜姓部落首领，善用火，称炎帝，又号神农氏，尝百草。", "神农", "炎帝部落"),
+        new Tuple<int, int, string, string, string, string>(105, 20, "九尾狐", "有兽焉，其状如狐而九尾，其音如婴儿，能食人。", "九尾狐", "青丘"),
     };
 
     private void Awake()

@@ -6,18 +6,23 @@ using UnityEngine.SceneManagement;
 
 public class Welcome : MonoBehaviour
 {
-    public Button btnStart;
-    public Button btnSetting;
-    public Button btnAbout;
-    public Button btnExit;
+    public Button StartBtn;
+    public Button SettingBtn;
+    public Button AboutBtn;
+    public Button ExitBtn;
+
+    public GameObject AboutPanel;
+    public Button AboutCloseBtn;
 
     // Start is called before the first frame update
     void Start()
     {
-        btnStart.onClick.AddListener(StartGame);
-        btnExit.onClick.AddListener(ExitGame);
-        btnSetting.onClick.AddListener(SettingGame);
-        btnAbout.onClick.AddListener(AboutGame);
+        StartBtn.onClick.AddListener(StartGame);
+        ExitBtn.onClick.AddListener(ExitGame);
+        SettingBtn.onClick.AddListener(SettingGame);
+        AboutBtn.onClick.AddListener(ShowAbout);
+
+        AboutCloseBtn.onClick.AddListener(HideAbout);
     }
 
     // Update is called once per frame
@@ -36,9 +41,21 @@ public class Welcome : MonoBehaviour
 
     }
 
-    public void AboutGame()
+    public void ShowAbout()
     {
+        if (AboutPanel.activeInHierarchy)
+        {
+            AboutPanel.SetActive(false);
+        }
+        else
+        {
+            AboutPanel.SetActive(true);
+        }
+    }
 
+    public void HideAbout()
+    {
+        AboutPanel.SetActive(false);
     }
 
     public void ExitGame()

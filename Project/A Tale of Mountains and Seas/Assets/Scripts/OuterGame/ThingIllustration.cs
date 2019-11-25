@@ -22,15 +22,15 @@ public class ThingIllustration : MonoBehaviour
 
     Tuple<int, int, string, string, string, string>[] AllItem = 
     {
-        new Tuple<int, int, string, string, string, string>(0, 20, "西山之木", "精卫常衔西山之木石，以堙于东海。漳水出焉，东流注于河", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(1, 20, "精卫之羽", "漂亮的羽毛，似乎有神灵的气息", "精卫", "发鸠山"),
-        new Tuple<int, int, string, string, string, string>(2, 30, "神农鼎", "焚山煮海，吸天纳地，神器", "神农", "炎帝部落"),
-        new Tuple<int, int, string, string, string, string>(3, 40, "五弦琴", "五弦琴的描述", "神农", "炎帝部落"),
-        new Tuple<int, int, string, string, string, string>(4, 10, "章莪碧玉", "章莪碧玉的描述", "狰", "章莪山"),
-        new Tuple<int, int, string, string, string, string>(5, 20, "畏兽之魂", "畏兽之魂的描述", "狸力", "柜山"),
-        new Tuple<int, int, string, string, string, string>(6, 20, "火之晶簇", "火之晶簇的描述", "毕方", "章莪山"),
-        new Tuple<int, int, string, string, string, string>(7, 20, "辟邪丹", "辟邪丹的描述", "九尾狐", "青丘"),
-        new Tuple<int, int, string, string, string, string>(8, 10, "九尾之魂", "九尾狐的魂魄，据说只有感动九尾狐的人才有资格拿到", "九尾狐", "青丘"),
+        new Tuple<int, int, string, string, string, string>(0, 20, "西山之木", "精卫常衔西山之木石，以堙于东海。", "精卫", "发鸠山"),
+        new Tuple<int, int, string, string, string, string>(1, 20, "精卫之羽", "精卫身上的羽毛，熠熠流光。", "精卫", "发鸠山"),
+        new Tuple<int, int, string, string, string, string>(2, 30, "神农鼎", "神农昔日炼制百药之古鼎，据说能炼出天界诸神亦无法轻得之旷世神药，并隐藏其他神秘之力量。", "神农", "炎帝部落"),
+        new Tuple<int, int, string, string, string, string>(3, 40, "五弦琴", "神农之琴，有宫商角徵羽五弦。", "神农", "炎帝部落"),
+        new Tuple<int, int, string, string, string, string>(4, 10, "章莪碧玉", "章莪之山上的瑶玉，似乎是狰的宝贝。", "狰", "章莪山"),
+        new Tuple<int, int, string, string, string, string>(5, 20, "畏兽之魂", "柜山畏兽的魂魄，其出现之地大兴土木。", "狸力", "柜山"),
+        new Tuple<int, int, string, string, string, string>(6, 20, "火之晶簇", "讹火化灵形成的晶簇，蕴含着毕方的力量。", "毕方", "章莪山"),
+        new Tuple<int, int, string, string, string, string>(7, 20, "辟邪丹", "以九尾狐之血炼制而成，可驱万邪。", "九尾狐", "青丘"),
+        new Tuple<int, int, string, string, string, string>(8, 10, "九尾之魂", "九尾狐之魂，似有摄人心魄之力。", "九尾狐", "青丘"),
 
     };
 
