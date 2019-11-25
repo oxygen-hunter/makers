@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
@@ -24,18 +25,11 @@ public class Boss : MonoBehaviour
 
     // 资源
     public GameObject bulletPrefab;    // 子弹的预制件               
-    public SpriteRenderer sr;         // Boss的Sprites列表
-    public Sprite[] BossSprites;       // 
+    public Slider HPStrip;             // 血条
     
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        HP = 16;
-        moveSpeed = 4;
-        moveTimeMax = 1.6f;
-        attackTimeMax = 1.0f;
-        skillCD = 256;
     }
 
     // Update is called once per frame
@@ -105,6 +99,8 @@ public class Boss : MonoBehaviour
 
     protected virtual void GetHurt()
     {
+        HP--;
+        HPStrip.value = HP;
         // Boss受伤损血
         if (HP == 0)
         {
@@ -113,8 +109,6 @@ public class Boss : MonoBehaviour
             //GameObject.Destroy(gameObject);
 
         }
-        else
-            HP--;
         // Destroy Boss也意味着胜利
     }
 

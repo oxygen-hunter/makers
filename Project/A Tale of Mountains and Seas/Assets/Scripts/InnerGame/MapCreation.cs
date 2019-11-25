@@ -36,8 +36,8 @@ public class MapCreation : MonoBehaviour
         for (int x = -8; x <= 8; x++)
         {
             // 上下
-            CreateItem(item[0], new Vector3(x, -6, 0), Quaternion.identity);
-            CreateItem(item[0], new Vector3(x, 0, 0), Quaternion.identity);
+            CreateItem(item[0], new Vector3(x, -6f, 0), Quaternion.identity);
+            CreateItem(item[0], new Vector3(x, 0.5f, 0), Quaternion.identity);
         }
 
         for (int y = -6; y <= 0; y++)
@@ -48,15 +48,14 @@ public class MapCreation : MonoBehaviour
         }
 
         // 左边的石头
-        CreateItem(item[0], new Vector3(-1.3f, -4.7f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(-2.0f, -4.7f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(-1.3f, -4.0f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(-2.0f, -4.0f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(-1.5f, -4.3f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(-2.2f, -4.3f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(-1.8f, -3.7f, 0), Quaternion.identity);
 
         // 右边的石头
-        CreateItem(item[0], new Vector3(1.7f, -1.7f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(1.3f, -2.4f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(2.0f, -2.4f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(1.7f, -1.4f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(1.3f, -2.2f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(2.0f, -2.2f, 0), Quaternion.identity);
     }
 
     private void CreateItem(GameObject createGameObject, Vector3 createPosition, Quaternion createRotation)

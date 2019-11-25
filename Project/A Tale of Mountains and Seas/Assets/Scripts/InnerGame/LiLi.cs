@@ -11,6 +11,7 @@ public class LiLi : Boss
         moveTimeMax = 1.6f;
         attackTimeMax = 1.2f;
         skillCD = 128;
+        HPStrip.value = HPStrip.maxValue = HP;
     }
 
     private float skillAngle;
