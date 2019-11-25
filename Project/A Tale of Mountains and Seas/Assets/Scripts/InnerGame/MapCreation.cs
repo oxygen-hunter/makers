@@ -48,10 +48,9 @@ public class MapCreation : MonoBehaviour
         }
 
         // 左边的石头
-        CreateItem(item[0], new Vector3(-1.3f, -4.7f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(-2.0f, -4.7f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(-1.3f, -4.0f, 0), Quaternion.identity);
-        CreateItem(item[0], new Vector3(-2.0f, -4.0f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(-1.5f, -4.3f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(-2.2f, -4.3f, 0), Quaternion.identity);
+        CreateItem(item[0], new Vector3(-1.8f, -3.7f, 0), Quaternion.identity);
 
         // 右边的石头
         CreateItem(item[0], new Vector3(1.7f, -1.7f, 0), Quaternion.identity);
