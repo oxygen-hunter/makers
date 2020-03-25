@@ -47,4 +47,5 @@
 
 ![换魂仪式](img\换魂仪式1.png)
 
-![某个结局: 不幸被九尾狐夺舍](D:\UnityRepos\makers\img\不幸被九尾夺舍的结局.png)
+![某个结局: 不幸被九尾狐夺舍](https://github.com/oxygen-hunter/makers/blob/master/img/end1.png)
+
