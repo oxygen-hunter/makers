@@ -29,23 +29,23 @@
 
 ## 游戏界面展示
 
-![游戏封面](img\游戏封面.png)
+![游戏封面](img/游戏封面.png)
 
-![缘起](img\缘起.png)
+![缘起](img/缘起.png)
 
-![传送门](img\传送门.png)
+![传送门](img/传送门.png)
 
-![对话NPC: 狰](img\对话狰.png)
+![对话NPC: 狰](img/对话狰.png)
 
-![对战NPC: 狰](img\对战狰.png)
+![对战NPC: 狰](img/对战狰.png)
 
-![图鉴系统](img\图鉴系统.png)
+![图鉴系统](img/图鉴系统.png)
 
-![赢下毕方拿到道具](img\赢下毕方.png)
+![赢下毕方拿到道具](img/赢下毕方.png)
 
-![时辰用尽返回祭坛](img\返回祭坛.png)
+![时辰用尽返回祭坛](img/返回祭坛.png)
 
-![换魂仪式](img\换魂仪式1.png)
+![换魂仪式](img/换魂仪式1.png)
 
-![某个结局: 不幸被九尾狐夺舍](https://github.com/oxygen-hunter/makers/blob/master/img/end1.png)
+![某个结局: 不幸被九尾狐夺舍](img/end1.png)
 
